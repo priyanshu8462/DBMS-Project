@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+   <link href="styles.css" rel="stylesheet">
+   <link href="alumni.css" rel="stylesheet">
+</head>
+<body>
+   <%- include('navbar') %>
+   <div class="queries-container">
+      <h1 class="question"><%=query.query%></h1>
+      <% query.answers.forEach(element => {%>
+            <p><%=element%></p>
+      <%});%>
+
+      <form action="/add-answer" method="POST">
+         <input type="text" placeholder="Add your answer..." name="answer">
+         <input type="hidden" name="query_id" value="<%=query._id%>">
+         <button type="submit" class="answer-query-btn">ADD</button>
+      </form>
+   </div>
+</body>
+</html>

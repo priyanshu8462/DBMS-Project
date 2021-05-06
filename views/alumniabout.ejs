@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <style>
+      body{
+         height: 100vh;
+         width: 100%;
+         background-color: aqua;
+      }
+      form{
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%,-50%);
+         display: flex;
+         flex-direction: column;
+      }
+      form input,form div, form textarea{
+         margin-bottom: 10px;
+      }
+   </style>
+</head>
+<body>
+   <form action="fillabout" method="POST">
+      <input type="text" name="name" placeholder="Your Name">
+      <input type="text" name="college" placeholder="College">
+      <input type="number" min="1950" max="2021" placeholder="Batch Start Year" name="start">
+      <input type="number" min="1950" max="2024" placeholder="Batch End Year" name="end">
+      <div>
+         <span>Proficiency</span>
+         <input type="checkbox"  name="proficiency" value="Science">Science
+         <input type="checkbox"  name="proficiency" value="Commerce">Commerce
+         <input type="checkbox"  name="proficiency" value="Humanities">Humanities
+      </div>
+      <textarea placeholder="Write About yourself in 140 characters" name="about"></textarea>
+      <button type="submit">SUBMIT</button>
+   </form>
+</body>
+</html>
